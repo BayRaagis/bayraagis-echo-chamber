@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground mt-auto">
+    <footer className="bg-gradient-to-r from-secondary/90 to-primary/90 text-white mt-auto">
       <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">BayRaagis</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/lovable-uploads/6d4dfe8e-c1c7-4513-b723-6087f9bb2c46.png" 
+                alt="BayRaagis Logo" 
+                className="h-10 w-auto"
+              />
+              <h3 className="text-xl font-bold">BayRaagis</h3>
+            </div>
             <p className="mb-4">Fusion Music from the Heart of the Bay</p>
           </div>
           
@@ -31,23 +38,25 @@ const Footer = () => {
                 href="https://www.instagram.com/bayraagis/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
+                className="hover:text-accent transition-colors flex items-center gap-2"
               >
                 <Instagram />
+                <span>Instagram</span>
               </a>
               <a 
                 href="https://www.youtube.com/@Bayraagis" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
+                className="hover:text-accent transition-colors flex items-center gap-2"
               >
                 <Youtube />
+                <span>YouTube</span>
               </a>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
+        <div className="border-t border-white/20 mt-8 pt-6 text-center">
           <p>© {new Date().getFullYear()} BayRaagis. All rights reserved.</p>
         </div>
       </div>
