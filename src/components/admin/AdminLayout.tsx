@@ -1,8 +1,7 @@
-
 import { ReactNode, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, Home, Users, Calendar, Music, MessageSquare, Settings, LogOut } from "lucide-react";
+import { Menu, Home, Users, Calendar, Music, MessageSquare, Settings, LogOut, ExternalLink } from "lucide-react";
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -38,6 +37,12 @@ const AdminLayout = ({ children, title = "Dashboard" }: AdminLayoutProps) => {
               <Link to="/admin/dashboard" className="flex items-center p-4 hover:bg-primary/90">
                 <Home className="h-5 w-5" />
                 {sidebarOpen && <span className="ml-3">Dashboard</span>}
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="flex items-center p-4 hover:bg-primary/90" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-5 w-5" />
+                {sidebarOpen && <span className="ml-3">View Website</span>}
               </Link>
             </li>
             <li>
@@ -85,8 +90,11 @@ const AdminLayout = ({ children, title = "Dashboard" }: AdminLayoutProps) => {
 
       {/* Main content */}
       <div className="flex-1">
-        <header className="bg-white shadow-sm p-4">
+        <header className="bg-white shadow-sm p-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">{title}</h1>
+          <Button variant="outline" asChild>
+            <Link to="/">View Website</Link>
+          </Button>
         </header>
         <main className="p-6">
           {children}
