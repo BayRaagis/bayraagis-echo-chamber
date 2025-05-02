@@ -1,7 +1,11 @@
 
 import { Link } from "react-router-dom";
 
-const BandIntro = () => {
+interface BandIntroProps {
+  showFollowSection?: boolean;
+}
+
+const BandIntro = ({ showFollowSection = true }: BandIntroProps) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">BayRaagis</h1>
@@ -25,27 +29,29 @@ const BandIntro = () => {
         </p>
       </div>
       
-      <div className="mb-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Follow us</h2>
-        <div className="flex justify-center space-x-4">
-          <a 
-            href="https://www.instagram.com/bayraagis/" 
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="text-primary hover:text-primary/80 underline"
-          >
-            Instagram
-          </a>
-          <a 
-            href="https://www.youtube.com/@Bayraagis" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:text-primary/80 underline"
-          >
-            YouTube
-          </a>
+      {showFollowSection && (
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-bold mb-4">Follow us</h2>
+          <div className="flex justify-center space-x-4">
+            <a 
+              href="https://www.instagram.com/bayraagis/" 
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="text-primary hover:text-primary/80 underline"
+            >
+              Instagram
+            </a>
+            <a 
+              href="https://www.youtube.com/@Bayraagis" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 underline"
+            >
+              YouTube
+            </a>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
