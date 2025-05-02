@@ -1,7 +1,9 @@
+
 import { ReactNode, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, Home, Users, Calendar, Music, MessageSquare, Settings, LogOut, ExternalLink } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -11,10 +13,10 @@ interface AdminLayoutProps {
 const AdminLayout = ({ children, title = "Dashboard" }: AdminLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
+  const { signOut, user } = useAuth();
 
-  const handleLogout = () => {
-    // In a real app, this would clear the authentication state
-    navigate("/admin/login");
+  const handleLogout = async () => {
+    await signOut();
   };
 
   return (
@@ -92,9 +94,16 @@ const AdminLayout = ({ children, title = "Dashboard" }: AdminLayoutProps) => {
       <div className="flex-1">
         <header className="bg-white shadow-sm p-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">{title}</h1>
-          <Button variant="outline" asChild>
-            <Link to="/">View Website</Link>
-          </Button>
+          <div className="flex items-center gap-4">
+            {user && (
+              <span className="text-sm text-muted-foreground hidden md:block">
+                {user.email}
+              </span>
+            )}
+            <Button variant="outline" asChild>
+              <Link to="/">View Website</Link>
+            </Button>
+          </div>
         </header>
         <main className="p-6">
           {children}

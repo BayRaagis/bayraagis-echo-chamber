@@ -1,49 +1,61 @@
+
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { toast } from "@/components/ui/use-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "@/components/ui/use-toast";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
   password: z.string().min(8, { message: "Password must be at least 8 characters." }),
+  phoneNumber: z.string().min(10, { message: "Please enter a valid phone number." }),
   verificationCode: z.string().optional()
 });
 
 const AdminLogin = () => {
   const [showTwoFactor, setShowTwoFactor] = useState(false);
   const navigate = useNavigate();
+  const { requestVerificationCode, verifyCode, signIn } = useAuth();
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
+      phoneNumber: "",
       verificationCode: ""
     },
   });
 
-  const onSubmit = (values: z.infer<typeof loginSchema>) => {
-    if (!showTwoFactor) {
-      // Simulating sending verification code
+  const onSubmit = async (values: z.infer<typeof loginSchema>) => {
+    try {
+      if (!showTwoFactor) {
+        // Request verification code
+        await requestVerificationCode(values.phoneNumber, values.email, values.password);
+        setShowTwoFactor(true);
+      } else {
+        // Verify the code
+        const verified = await verifyCode(values.email, values.verificationCode || "");
+        
+        if (verified) {
+          // If verified, sign in
+          await signIn(values.email, values.password);
+        }
+      }
+    } catch (error) {
+      console.error("Authentication error:", error);
       toast({
-        title: "Verification Code Sent",
-        description: "A verification code has been sent to your mobile phone."
+        title: "Authentication Error",
+        description: "An error occurred during authentication.",
+        variant: "destructive"
       });
-      setShowTwoFactor(true);
-    } else {
-      // In a real application, this would authenticate with a backend
-      console.log("Login with verification:", values);
-      toast({
-        title: "Login Successful",
-        description: "Welcome to the admin dashboard."
-      });
-      navigate("/admin/dashboard");
     }
   };
 
@@ -95,15 +107,38 @@ const AdminLogin = () => {
               )}
             />
             
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="412-515-5347" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
             {showTwoFactor && (
               <FormField
                 control={form.control}
                 name="verificationCode"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="space-y-2">
                     <FormLabel>Verification Code</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter the code sent to your phone" {...field} />
+                      <InputOTP maxLength={6} {...field}>
+                        <InputOTPGroup>
+                          <InputOTPSlot index={0} />
+                          <InputOTPSlot index={1} />
+                          <InputOTPSlot index={2} />
+                          <InputOTPSlot index={3} />
+                          <InputOTPSlot index={4} />
+                          <InputOTPSlot index={5} />
+                        </InputOTPGroup>
+                      </InputOTP>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
