@@ -57,7 +57,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-6 text-center">
-          <p>© {new Date().getFullYear()} BayRaagis. All rights reserved.</p>
+          <p className="mb-2">© {new Date().getFullYear()} BayRaagis. All rights reserved.</p>
+          <p className="text-sm opacity-70">
+            <Link to="/admin/login" className="hover:underline">Admin Login</Link>
+          </p>
         </div>
       </div>
     </footer>
