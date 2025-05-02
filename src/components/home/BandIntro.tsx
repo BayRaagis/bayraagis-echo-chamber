@@ -1,7 +1,5 @@
 
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import BandStats from "./BandStats";
 
 const BandIntro = () => {
   return (
@@ -26,10 +24,6 @@ const BandIntro = () => {
           past performances, upcoming events and more. To get latest updates about us, follow us in Instagram.
         </p>
       </div>
-
-      <div className="mb-12">
-        <BandStats />
-      </div>
       
       <div className="mb-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Follow us</h2>
@@ -51,21 +45,6 @@ const BandIntro = () => {
             YouTube
           </a>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Link to="/artists">
-          <Button variant="outline" className="w-full">Artist Directory</Button>
-        </Link>
-        <Link to="/performances">
-          <Button variant="outline" className="w-full">Past Performances</Button>
-        </Link>
-        <Link to="/events">
-          <Button variant="outline" className="w-full">Upcoming Events</Button>
-        </Link>
-        <Link to="/contact">
-          <Button variant="outline" className="w-full">Contact Us</Button>
-        </Link>
       </div>
     </div>
   );
