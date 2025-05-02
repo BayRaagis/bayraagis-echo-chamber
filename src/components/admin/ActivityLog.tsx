@@ -29,12 +29,8 @@ const ActivityLog = () => {
   useEffect(() => {
     const fetchActivities = async () => {
       try {
-        // Custom SQL query to get admin activity
-        const { data, error } = await supabase
-          .rpc('get_admin_activity', {
-            limit_count: 50
-          })
-          .order('created_at', { ascending: false });
+        // Use the edge function to get admin activity
+        const { data, error } = await supabase.functions.invoke('get-admin-activity');
 
         if (error) {
           console.error("Error fetching activities:", error);
@@ -50,26 +46,6 @@ const ActivityLog = () => {
     };
 
     fetchActivities();
-    
-    // Subscribe to new activities
-    const channel = supabase
-      .channel('admin_activity_changes')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'admin_activity'
-        },
-        (payload) => {
-          setActivities(prev => [payload.new as Activity, ...prev].slice(0, 50));
-        }
-      )
-      .subscribe();
-      
-    return () => {
-      supabase.removeChannel(channel);
-    };
   }, []);
 
   if (loading) {

@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
       
       if (data?.user) {
-        // Log authentication
+        // Log authentication using edge function
         await logAdminAction('login', 'admin', data.user.id);
         
         toast({
@@ -112,7 +112,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signOut = async () => {
     try {
       if (user) {
-        // Log sign out
+        // Log sign out using edge function
         await logAdminAction('logout', 'admin', user.id);
       }
       
@@ -137,15 +137,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (!user) return;
     
     try {
-      const { error } = await supabase
-        .from('admin_activity')
-        .insert({
-          admin_id: user.id,
+      // Use edge function to log admin action
+      const { error } = await supabase.functions.invoke('log-admin-action', {
+        body: {
           action_type: actionType,
           entity_type: entityType,
           entity_id: entityId,
           details: details || {}
-        });
+        }
+      });
         
       if (error) {
         console.error('Error logging admin action:', error);
