@@ -29,44 +29,19 @@ const ActivityLog = () => {
   useEffect(() => {
     const fetchActivities = async () => {
       try {
+        // Custom SQL query to get admin activity
         const { data, error } = await supabase
-          .from('admin_activity')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(50);
+          .rpc('get_admin_activity', {
+            limit_count: 50
+          })
+          .order('created_at', { ascending: false });
 
         if (error) {
           console.error("Error fetching activities:", error);
           return;
         }
 
-        // Get admin emails
-        if (data && data.length > 0) {
-          const adminIds = [...new Set(data.map(activity => activity.admin_id))];
-          
-          const { data: userData, error: userError } = await supabase
-            .from('profiles')
-            .select('id, email')
-            .in('id', adminIds);
-            
-          if (!userError && userData) {
-            const userMap = userData.reduce((acc, user) => {
-              acc[user.id] = user.email;
-              return acc;
-            }, {} as Record<string, string>);
-            
-            const enrichedActivities = data.map(activity => ({
-              ...activity,
-              admin_email: userMap[activity.admin_id] || 'Unknown'
-            }));
-            
-            setActivities(enrichedActivities);
-          } else {
-            setActivities(data);
-          }
-        } else {
-          setActivities(data || []);
-        }
+        setActivities(data || []);
       } catch (error) {
         console.error("Error in activity fetch:", error);
       } finally {

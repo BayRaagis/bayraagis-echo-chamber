@@ -9,3 +9,6 @@ verify_jwt = false
 
 [functions.log-admin-action]
 verify_jwt = true
+
+[functions.get-admin-activity]
+verify_jwt = true

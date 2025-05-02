@@ -12,8 +12,6 @@ interface AuthContextType {
   isAdmin: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
-  requestVerificationCode: (phoneNumber: string, email: string, password: string) => Promise<string | null>;
-  verifyCode: (email: string, code: string) => Promise<boolean>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -63,8 +61,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       const { data, error } = await supabase
-        .from('admin_users')
-        .select('is_verified')
+        .from('profiles')
+        .select('is_admin')
         .eq('id', userId)
         .single();
       
@@ -74,7 +72,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
       
-      setIsAdmin(data?.is_verified || false);
+      setIsAdmin(data?.is_admin || false);
     } catch (error) {
       console.error('Error checking admin status:', error);
       setIsAdmin(false);
@@ -135,80 +133,23 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const requestVerificationCode = async (phoneNumber: string, email: string, password: string): Promise<string | null> => {
-    try {
-      const { data, error } = await supabase.functions.invoke('send-verification', {
-        body: { phoneNumber, email, password },
-      });
-      
-      if (error) {
-        toast({
-          title: "Verification Failed",
-          description: error.message || "Failed to send verification code.",
-          variant: "destructive",
-        });
-        throw error;
-      }
-      
-      toast({
-        title: "Verification Code Sent",
-        description: "A verification code has been sent to your phone.",
-      });
-      
-      // In development, return the code for easier testing
-      return data.code || null;
-    } catch (error) {
-      console.error('Error requesting verification code:', error);
-      throw error;
-    }
-  };
-
-  const verifyCode = async (email: string, code: string): Promise<boolean> => {
-    try {
-      const { data, error } = await supabase.functions.invoke('verify-code', {
-        body: { email, code },
-      });
-      
-      if (error) {
-        toast({
-          title: "Verification Failed",
-          description: error.message || "Invalid verification code.",
-          variant: "destructive",
-        });
-        return false;
-      }
-      
-      // If we have session data, set it
-      if (data.session && data.user) {
-        // In a real implementation, we would set the session here
-        // However the edge function returns a magic link instead of a session
-        // So we'll redirect to login
-        toast({
-          title: "Verification Successful",
-          description: "You can now log in with your credentials.",
-        });
-        return true;
-      }
-      
-      return false;
-    } catch (error) {
-      console.error('Error verifying code:', error);
-      return false;
-    }
-  };
-
   const logAdminAction = async (actionType: string, entityType: string, entityId?: string, details?: any) => {
     if (!user) return;
     
     try {
-      await supabase.functions.invoke('log-admin-action', {
-        body: {
+      const { error } = await supabase
+        .from('admin_activity')
+        .insert({
+          admin_id: user.id,
           action_type: actionType,
           entity_type: entityType,
           entity_id: entityId,
           details: details || {}
-        }
-      });
+        });
+        
+      if (error) {
+        console.error('Error logging admin action:', error);
+      }
     } catch (error) {
       console.error('Error logging admin action:', error);
     }
@@ -221,8 +162,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     isAdmin,
     signIn,
     signOut,
-    requestVerificationCode,
-    verifyCode,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
