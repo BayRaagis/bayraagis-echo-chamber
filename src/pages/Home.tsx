@@ -1,5 +1,6 @@
 
 import BandIntro from "@/components/home/BandIntro";
+import BandStats from "@/components/home/BandStats";
 import Layout from "@/components/layout/Layout";
 
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
       <div className="container mx-auto py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <BandIntro />
+          <div className="mt-12">
+            <BandStats />
+          </div>
         </div>
       </div>
     </Layout>
