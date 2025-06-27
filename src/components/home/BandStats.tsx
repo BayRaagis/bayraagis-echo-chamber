@@ -2,9 +2,9 @@
 const BandStats = () => {
   // These would come from the database in a real application
   const stats = {
-    totalShows: 15,
-    uniquePerformers: 24,
-    hoursPerformed: 45
+    totalShows: 25,
+    uniquePerformers: 70,
+    hoursPerformed: 50
   };
 
   return (

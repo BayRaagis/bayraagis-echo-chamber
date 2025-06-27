@@ -10,7 +10,7 @@ const Header = () => {
           <div className="flex items-center mb-4 md:mb-0">
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src="/lovable-uploads/6d4dfe8e-c1c7-4513-b723-6087f9bb2c46.png" 
+                src="/assets/bayraagis-logo.png" 
                 alt="BayRaagis Logo" 
                 className="h-16 w-auto"
               />

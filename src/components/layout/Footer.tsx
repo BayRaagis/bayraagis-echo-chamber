@@ -10,13 +10,13 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="/lovable-uploads/6d4dfe8e-c1c7-4513-b723-6087f9bb2c46.png" 
+                src="/assets/bayraagis-logo.png" 
                 alt="BayRaagis Logo" 
                 className="h-10 w-auto"
               />
               <h3 className="text-xl font-bold">BayRaagis</h3>
             </div>
-            <p className="mb-4">Fusion Music from the Heart of the Bay</p>
+            <p className="mb-4">An Indian Classical Fusion Music Collective</p>
           </div>
           
           <div>
