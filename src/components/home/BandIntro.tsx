@@ -10,15 +10,15 @@ const BandIntro = ({ showFollowSection = true }: BandIntroProps) => {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">BayRaagis</h1>
       <p className="text-xl text-center text-muted-foreground mb-8">
-        Fusion Music from the Heart of the Bay
+        An Indian Classical Fusion Music Collective
       </p>
       
       <div className="prose prose-lg max-w-none mb-8">
         <p>
-          BayRaagis is a vibrant fusion music collective based in the Bay Area, California. 
+          BayRaagis is a vibrant music collective based in the San Francisco Bay Area, California. 
           We believe that the magic of music is realized when we thoughtfully blend different 
           genres together. With our base in Indian classical music, we are eager and enthusiastic 
-          about blending our roots with other genres such as Jazz, pop etc.
+          about blending our roots with other genres such as jazz, semi-classical, folk, Indian or Western pop, etc.
         </p>
         <p>
           Since our inception in August 2024, we have hosted a rotating cast of talented performers 

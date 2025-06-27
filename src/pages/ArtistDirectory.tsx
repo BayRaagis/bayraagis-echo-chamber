@@ -1,58 +1,45 @@
 
 import Layout from "@/components/layout/Layout";
+import { useEffect, useState } from "react";
+import * as XLSX from "xlsx";
 
 const ArtistDirectory = () => {
-  // This would be populated from a database in a real application
-  const artists = [
-    {
-      id: 1,
-      name: "Avinash Kumar",
-      bio: "Vocalist specializing in Indian classical and fusion. With over 10 years of experience, Avinash brings rich traditional vocals with modern interpretations.",
-      photo: "/placeholder.svg",
-      links: {
-        instagram: "https://instagram.com/",
-        soundcloud: "https://soundcloud.com/",
-        spotify: "https://spotify.com/",
-        youtube: "https://youtube.com/"
-      }
-    },
-    {
-      id: 2,
-      name: "Priya Sharma",
-      bio: "Talented tabla player who seamlessly blends traditional rhythms with contemporary beats. Known for creating captivating percussion arrangements.",
-      photo: "/placeholder.svg",
-      links: {
-        instagram: "https://instagram.com/",
-        soundcloud: "https://soundcloud.com/",
-        spotify: "https://spotify.com/",
-        youtube: "https://youtube.com/"
-      }
-    },
-    {
-      id: 3,
-      name: "Dev Patel",
-      bio: "Sitar virtuoso with a passion for cross-genre experimentation. Dev's innovative approach brings the sitar into jazz and electronic music spaces.",
-      photo: "/placeholder.svg",
-      links: {
-        instagram: "https://instagram.com/",
-        soundcloud: "https://soundcloud.com/",
-        spotify: "https://spotify.com/",
-        youtube: "https://youtube.com/"
-      }
-    },
-    {
-      id: 4,
-      name: "Maya Rodriguez",
-      bio: "Versatile vocalist who brings Latin influences into fusion music. Her dynamic range and improvisational skills create magical musical moments.",
-      photo: "/placeholder.svg",
-      links: {
-        instagram: "https://instagram.com/",
-        soundcloud: "https://soundcloud.com/",
-        spotify: "https://spotify.com/",
-        youtube: "https://youtube.com/"
-      }
-    }
-  ];
+  // Import this from a spreadsheet
+  const [artists, setArtists] = useState([]);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      const response = await fetch(
+        "https://docs.google.com/spreadsheets/d/11los_LeBQHrewPU6DNXGuxxcK56dTxDMHdHrlw1i12E/export?format=csv"
+      );
+      const arrayBuffer = await response.arrayBuffer();
+      const binaryString = new Uint8Array(arrayBuffer).reduce((acc, byte) => acc + String.fromCharCode(byte), "");
+      const workbook = XLSX.read(binaryString, { type: "binary" });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const data = XLSX.utils.sheet_to_json(sheet);
+
+      const filteredArtists = data
+        .filter((row: any) => row.approved === "yes")
+        .map((row: any, index: number) => ({
+          id: index + 1,
+          name: row.name,
+          bio: row.bio,
+          photo: "/placeholder.svg",
+          links: {
+            instagram: "http://instagram.com/" + row.instagram || "#",
+            youtube: "http://youtube.com/@" + row.youtube || "#",
+          },
+        }));
+      setArtists(filteredArtists);
+    };
+    fetchArtists();
+  }, []);
+
+  // log the artists to console for debugging
+  useEffect(() => {
+    console.log("Artists:", artists);
+  }, [artists]);
 
   return (
     <Layout>
