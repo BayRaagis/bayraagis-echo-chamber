@@ -22,42 +22,17 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "The fusion of Indian classical with jazz was absolutely mesmerizing. BayRaagis creates a musical experience unlike anything I've heard before!",
-      name: "Sarah Johnson",
-      image: "/placeholder.svg"
+      quote: "It was a great show! So much genuinity in everyone's music.",
+      name: "MS",
+      image: "/assets/dummy-audience.png"
     },
     {
       id: 2,
-      quote: "As someone new to Indian music, BayRaagis made it accessible while still honoring the traditions. Their performances are emotionally moving and technically impressive.",
-      name: "Michael Chen",
-      image: "/placeholder.svg"
-    },
-    {
-      id: 3,
-      quote: "The way they blend different musical worlds is pure genius. Each concert feels like a journey through cultures and emotions.",
-      name: "Priya Patel",
-      image: "/placeholder.svg"
+      quote: "Awesome vibes \m/",
+      name: "AA",
+      image: "/assets/dummy-audience.png"
     }
   ];
-
-  const form = useForm<z.infer<typeof testimonialSchema>>({
-    resolver: zodResolver(testimonialSchema),
-    defaultValues: {
-      name: "",
-      quote: "",
-      email: ""
-    },
-  });
-
-  const onSubmit = (values: z.infer<typeof testimonialSchema>) => {
-    // In a real application, this would send the data to a backend
-    console.log(values);
-    toast({
-      title: "Testimonial Submitted",
-      description: "Thank you for your testimonial! It will be reviewed by our team."
-    });
-    form.reset();
-  };
 
   return (
     <Layout>
@@ -91,61 +66,16 @@ const Testimonials = () => {
         </div>
         
         <div className="max-w-lg mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-center">Share Your Experience</h2>
-          
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="Your email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="quote"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Testimonial</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder="Share your experience with BayRaagis..." 
-                        className="min-h-[120px]" 
-                        {...field} 
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <Button type="submit" className="w-full">
-                Submit Testimonial
-              </Button>
-            </form>
-          </Form>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeDbYzuwbud0Wwb-3c6Var-yqqN_SxeriJCrC7Xs34BwcjklA/viewform?embedded=true"
+            width="100%"
+            height="1200"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+          >
+            Loading…
+          </iframe>
         </div>
       </div>
     </Layout>
