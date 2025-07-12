@@ -49,8 +49,9 @@ const ArtistDirectory = () => {
           {artists.map(artist => (
             <div key={artist.id} className="border rounded-lg overflow-hidden shadow-md">
               <img 
-                src={artist.photo} 
-                alt={artist.name} 
+                // src={artist.photo}
+                src="/assets/dummy-singer.png"
+                alt={artist.name}
                 className="w-full h-64 object-cover object-center"
               />
               <div className="p-4">

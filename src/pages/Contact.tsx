@@ -42,8 +42,17 @@ const Contact = () => {
     <Layout>
       <div className="container mx-auto py-12 px-4">
         <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
+
+        <p>
+          Reach us at <a href="mailto:bayraagis24@gmail.com">bayraagis24@gmail.com</a>
+          <br/><br/>
+          We are open to show bookings and inquiries!<br/>
+          For collaborations or joining the collective, please send us links to some of your previous performances.<br/>
+          We look forward to hearing from you.
+        </p>
         
-        <div className="max-w-lg mx-auto">
+        {/* // TODO: make backend work */}
+        {/* <div className="max-w-lg mx-auto">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
@@ -123,7 +132,7 @@ const Contact = () => {
               </Button>
             </form>
           </Form>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
