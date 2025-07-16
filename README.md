@@ -70,6 +70,5 @@ Do the following steps to update the site
 1. Make your changes in a branch.
 2. Run `npm run dev` and make sure the site looks as you expect it.
 3. Open this repo on this branch in the terminal and run `npm run build`.
-4. You will see contents in `dist/` move them to `docs/` with `mv dist docs`
-5. Check in everything, create a merge request and merge it in `main`. You may need a review for this depending on your permissions.
-6. Your changes will be reflected live.
+4. Check in everything, create a merge request and merge it in `main`. You may need a review for this depending on your permissions.
+5. Your changes will be reflected live.
