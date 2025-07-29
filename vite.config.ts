@@ -19,8 +19,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    outDir: './', // <--- put final files into root
-    emptyOutDir: false, // prevent deleting other files in root
-  },
+  // build: {
+  //   outDir: './', // <--- put final files into root
+  //   emptyOutDir: false, // prevent deleting other files in root
+  // },
 }));

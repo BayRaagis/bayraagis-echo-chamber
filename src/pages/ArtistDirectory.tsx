@@ -29,6 +29,7 @@ const ArtistDirectory = () => {
           links: {
             instagram: "http://instagram.com/" + row.instagram || "#",
             youtube: "http://youtube.com/@" + row.youtube || "#",
+            kalasocial: "https://kala.social/@" + row.kalasocial || "#",
           },
         }));
       setArtists(filteredArtists);
@@ -57,18 +58,21 @@ const ArtistDirectory = () => {
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{artist.name}</h3>
                 <p className="text-muted-foreground mb-4">{artist.bio}</p>
-                <div className="flex space-x-4">
+                <div className="flex space-x-5">
                   <a href={artist.links.instagram} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                     Instagram
                   </a>
-                  <a href={artist.links.soundcloud} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                  {/* <a href={artist.links.soundcloud} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                     SoundCloud
-                  </a>
-                  <a href={artist.links.spotify} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                  </a> */}
+                  {/* <a href={artist.links.spotify} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                     Spotify
-                  </a>
+                  </a> */}
                   <a href={artist.links.youtube} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
                     YouTube
+                  </a>
+                  <a href={artist.links.kalasocial} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                    KalaSocial
                   </a>
                 </div>
               </div>
