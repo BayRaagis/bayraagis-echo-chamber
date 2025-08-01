@@ -27,9 +27,11 @@ const ArtistDirectory = () => {
           bio: row.bio,
           photo: "/placeholder.svg",
           links: {
-            instagram: "http://instagram.com/" + row.instagram || "#",
-            youtube: "http://youtube.com/@" + row.youtube || "#",
-            kalasocial: "https://kala.social/@" + row.kalasocial || "#",
+            instagram: row.instagram ? "http://instagram.com/" + row.instagram : null,
+            youtube: row.youtube ? "http://youtube.com/@" + row.youtube : null,
+            kalasocial: row.kalasocial ? "https://kala.social/@" + row.kalasocial : null,
+            soundcloud: row.soundcloud ? "https://soundcloud.com/" + row.soundcloud : null,
+            spotify: row.spotify ? "https://open.spotify.com/artist/" + row.spotify : null,
           },
         }));
       setArtists(filteredArtists);
@@ -59,21 +61,26 @@ const ArtistDirectory = () => {
                 <h3 className="text-xl font-semibold mb-2">{artist.name}</h3>
                 <p className="text-muted-foreground mb-4">{artist.bio}</p>
                 <div className="flex space-x-5">
-                  <a href={artist.links.instagram} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                    Instagram
-                  </a>
-                  {/* <a href={artist.links.soundcloud} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                    SoundCloud
-                  </a> */}
-                  {/* <a href={artist.links.spotify} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                    Spotify
-                  </a> */}
-                  <a href={artist.links.youtube} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                    YouTube
-                  </a>
-                  <a href={artist.links.kalasocial} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                    KalaSocial
-                  </a>
+                  {artist.links.instagram && (
+                    <a href={artist.links.instagram} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                      Instagram
+                    </a>
+                  )}
+                  {artist.links.youtube && (
+                    <a href={artist.links.youtube} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                      YouTube
+                    </a>
+                  )}
+                  { artist.links.soundcloud && (
+                    <a href={artist.links.soundcloud} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                      SoundCloud
+                    </a>
+                  )}
+                  {artist.links.spotify && (
+                    <a href={artist.links.spotify} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+                      Spotify
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

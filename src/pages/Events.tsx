@@ -50,6 +50,11 @@ const Events = () => {
               <div key={event.id} className="border rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
                 <p className="text-muted-foreground mb-2">Date: {event.date}</p>
+                <Button asChild className="mb-4">
+                  <a href={event.rsvp} target="_blank" rel="noopener noreferrer">
+                    RSVP
+                  </a>
+                </Button>
                 <InstagramEmbed url={event.link} />
               </div>
             ))}
