@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="/assets/bayraagis-logo.png" 
+                src={`${import.meta.env.BASE_URL}assets/bayraagis-logo.png`}
                 alt="BayRaagis Logo" 
                 className="h-10 w-auto"
               />

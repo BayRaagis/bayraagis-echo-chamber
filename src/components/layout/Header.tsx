@@ -10,7 +10,7 @@ const Header = () => {
           <div className="flex items-center mb-4 md:mb-0">
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src="/assets/bayraagis-logo.png" 
+                src={`${import.meta.env.BASE_URL}assets/bayraagis-logo.png`} 
                 alt="BayRaagis Logo" 
                 className="h-16 w-auto"
               />

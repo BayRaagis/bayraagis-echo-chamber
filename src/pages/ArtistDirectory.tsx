@@ -53,7 +53,7 @@ const ArtistDirectory = () => {
             <div key={artist.id} className="border rounded-lg overflow-hidden shadow-md">
               <img 
                 // src={artist.photo}
-                src="/assets/dummy-singer.png"
+                src={`${import.meta.env.BASE_URL}assets/dummy-singer.png`}
                 alt={artist.name}
                 className="w-full h-64 object-cover object-center"
               />

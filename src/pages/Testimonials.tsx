@@ -24,13 +24,13 @@ const Testimonials = () => {
       id: 1,
       quote: "It was a great show! So much genuinity in everyone's music.",
       name: "MS",
-      image: "/assets/dummy-audience.png"
+      image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     },
     {
       id: 2,
-      quote: "Awesome vibes \m/",
+      quote: "Awesome vibes \\m/",
       name: "AA",
-      image: "/assets/dummy-audience.png"
+      image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     }
   ];
 
