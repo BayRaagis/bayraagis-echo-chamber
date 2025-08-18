@@ -33,9 +33,9 @@ jobs:
       
       - uses: actions/configure-pages@v5
       
-      - uses: actions/upload-pages-artifact@3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Upload the built files from dist directory
+          path: ./  # Upload the built files from root
       
       - name: Deploy to GitHub Pages
         id: deployment
