@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/bayraagis-echo-chamber/' : '/',
+  base: '/', // Always use root-relative paths for builds
   server: {
     host: "::",
     port: 8080,
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: './', // <--- put final files into root
-    emptyOutDir: false, // prevent deleting other files in root
+    outDir: './dist', // Build into dist directory
+    emptyOutDir: true, // Clean dist directory before building
   },
 }));
