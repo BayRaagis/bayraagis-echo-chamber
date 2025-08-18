@@ -21,8 +21,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: './', // <--- put final files into root
-    emptyOutDir: false, // prevent deleting other files in root
+    outDir: './docs', // <--- put final files into ./docs
+    emptyOutDir: true, // prevent deleting other files in root
     assetsDir: 'assets', // static assets (images, js, css, etc.)
+    rollupOptions: {
+      output: {
+        entryFileNames: 'index.js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[extname]',
+      },
+    },
   },
 }));

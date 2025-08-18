@@ -73,6 +73,7 @@ Note: the other option **which we are not going to use** was to publish via Lova
 
 1. Make your changes in a branch
 2. Run `npm run dev` and make sure the site looks as you expect it
+3. `git add docs/*`
 3. Commit and push your changes to the `main` branch
 4. GitHub Actions will automatically:
    - Build your project
@@ -93,7 +94,7 @@ This will generate the production files in the root directory. **Note**: These f
 
 - **Source**: GitHub Actions (deploy from a branch)
 - **Branch**: `main`
-- **Folder**: `/` (root)
+- **Folder**: `/` (docs)
 - **URL**: https://bayraagis.github.io/bayraagis-echo-chamber/
 
 The site automatically rebuilds and deploys whenever you push changes to the main branch.
