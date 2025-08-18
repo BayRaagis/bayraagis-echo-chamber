@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/bayraagis-echo-chamber/' : '/',
   server: {
     host: "::",
     port: 8080,
@@ -19,8 +20,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // build: {
-  //   outDir: './', // <--- put final files into root
-  //   emptyOutDir: false, // prevent deleting other files in root
-  // },
+  build: {
+    outDir: './', // <--- put final files into root
+    emptyOutDir: false, // prevent deleting other files in root
+  },
 }));

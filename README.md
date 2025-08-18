@@ -62,14 +62,38 @@ This project is built with:
 
 ## How can I deploy this project?
 
-One option **which we are not going to use** is to simply open [Lovable](https://lovable.dev/projects/9a5a9140-0c5b-439d-8132-9e9e49a41593) and click on Share -> Publish.
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
 
-What we're doing instead: pushing to a custom domain using Github Pages.
+Note: the other option **which we are not going to use** was to publish via Lovable.
 
-Do the following steps to update the site
-1. Make your changes in a branch.
-2. Run `npm run dev` and make sure the site looks as you expect it.
-3. Open this repo on this branch in the terminal and run `npm run build`.
-4. You will see contents in `dist/` move them to `docs/` with `mv dist docs`
-5. Check in everything (including any extra files that may be generated in docs/), create a merge request and merge it in `main`. You may need a review for this depending on your permissions.
-6. Your changes will be reflected live.
+
+### Automatic Deployment (Recommended)
+
+**To update the live site:**
+
+1. Make your changes in a branch
+2. Run `npm run dev` and make sure the site looks as you expect it
+3. Commit and push your changes to the `main` branch
+4. GitHub Actions will automatically:
+   - Build your project
+   - Deploy it to GitHub Pages
+5. Your changes will be live.
+
+### Manual Build (for testing)
+
+If you want to test the production build locally:
+
+```sh
+npm run build
+```
+
+This will generate the production files in the root directory. **Note**: These files are automatically generated and should not be committed to git.
+
+### GitHub Pages Configuration
+
+- **Source**: GitHub Actions (deploy from a branch)
+- **Branch**: `main`
+- **Folder**: `/` (root)
+- **URL**: https://bayraagis.github.io/bayraagis-echo-chamber/
+
+The site automatically rebuilds and deploys whenever you push changes to the main branch.
