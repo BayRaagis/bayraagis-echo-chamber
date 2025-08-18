@@ -23,13 +23,28 @@ const Testimonials = () => {
     {
       id: 1,
       quote: "It was a great show! So much genuinity in everyone's music.",
+      show: "Missed Melodies (May 10, 2025)",
       name: "MS",
       image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     },
     {
       id: 2,
-      quote: "Awesome vibes \\m/",
-      name: "AA",
+      quote: "Great singers with unique voices and styles that complimented each other with \
+      the different types of music they were performing. Their uniqueness kept the concert interesting and engaging, \
+      like trying different flavors of food. Caliber of performance was high, very tight and well rehearsed. \
+      Instrumentalists were on point and need a lot of credit for the cohesion/depth of the songs. \
+      The dancer was absolutely fantastic! Huge charisma and stage presence.",
+      show: "BayRaagis Turns 1 (Aug 09, 2025)",
+      name: "Anon",
+      image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
+    },
+    {
+      id: 3,
+      quote: "What an incredible experience it has been to enjoy great music that is designed, conceived, and presented at each show. \
+      The variety of talent, genres of music, and the sheer \"passion to entertain\" by everyone on stage (and behind the scenes) makes \
+      me yearn for the next one at the end of every show.",
+      show: "Multiple shows",
+      name: "NN",
       image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     }
   ];
@@ -40,7 +55,7 @@ const Testimonials = () => {
         <h1 className="text-4xl font-bold mb-8 text-center">Testimonials</h1>
         
         <div className="mb-16">
-          <Carousel className="max-w-3xl mx-auto">
+          <Carousel opts={{ loop: true }} className="max-w-3xl mx-auto">
             <CarouselContent>
               {testimonials.map(testimonial => (
                 <CarouselItem key={testimonial.id}>
