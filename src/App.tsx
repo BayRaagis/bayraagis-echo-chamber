@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ArtistDirectory from "./pages/ArtistDirectory";
 import Events from "./pages/Events";
@@ -41,11 +41,11 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.PROD ? "/bayraagis-echo-chamber" : undefined}>
+      <HashRouter basename={import.meta.env.PROD ? "/bayraagis-echo-chamber" : undefined}>
         <AuthProvider>
           <AppContent />
         </AuthProvider>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
