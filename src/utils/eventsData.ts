@@ -2,16 +2,23 @@
 // TODO: add time, location
 
 export const upcomingEvents = [
+  // {
+  //   id: 1,
+  //   title: "BayRaagis Turns 1!",
+  //   date: "August 09, 2025",
+  //   link: "https://www.instagram.com/p/DMzPwi5ubpm/",
+  //   rsvp: "https://partiful.com/e/hMSj2oO20P17loksXPcG"
+  // }
+] as const;
+
+export const pastEvents = [
   {
-    id: 1,
+    id: 12,
     title: "BayRaagis Turns 1!",
     date: "August 09, 2025",
     link: "https://www.instagram.com/p/DMzPwi5ubpm/",
     rsvp: "https://partiful.com/e/hMSj2oO20P17loksXPcG"
-  }
-] as const;
-
-export const pastEvents = [
+  },
   {
     id: 11,
     title: "Bhajans, Abhangas, and Shabads",

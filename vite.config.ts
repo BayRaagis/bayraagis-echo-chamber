@@ -28,7 +28,14 @@ export default defineConfig(({ mode }) => ({
       output: {
         entryFileNames: 'index.js',
         chunkFileNames: '[name].js',
-        assetFileNames: '[name].[extname]',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') || [];
+          const ext = info[info.length - 1];
+          if (/\.(css)$/.test(assetInfo.name || '')) {
+            return `index.${ext}`;
+          }
+          return `[name].[ext]`;
+        },
       },
     },
   },
