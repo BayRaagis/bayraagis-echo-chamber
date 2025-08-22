@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/Home";
 import ArtistDirectory from "./pages/ArtistDirectory";
 import Events from "./pages/Events";
@@ -13,19 +14,15 @@ import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
 import NotFound from "./pages/NotFound";
-import PathRedirect from "./components/PathRedirect";
+// import PathRedirect from "./components/PathRedirect";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => (
   <Routes>
-    {/* Handle GitHub Pages ?/path redirects */}
-    <Route path="/" element={<Home />}>
-      <Route path=":path" element={<PathRedirect />} />
-    </Route>
-    
-    {/* Your existing routes */}
+    <Route path="/" element={<Home />} />
+
     <Route path="/artists" element={<ArtistDirectory />} />
     <Route path="/performances" element={<Performances />} />
     <Route path="/events" element={<Events />} />
@@ -42,18 +39,32 @@ const AppContent = () => (
   </Routes>
 );
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={undefined}>
-        <AuthProvider>
-          <AppContent />
-        </AuthProvider>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Handle GitHub Pages ?/path redirects
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const path = urlParams.get('/');
+    
+    // Only process if the path starts with ?/ (GitHub Pages format)
+    if (path && window.location.search.startsWith('?/')) {
+      // Remove the ?/path from URL and navigate to /path
+      window.history.replaceState(null, '', `/${path}`);
+    }
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={undefined}>
+          <AuthProvider>
+            <AppContent />
+          </AuthProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
