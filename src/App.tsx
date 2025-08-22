@@ -41,7 +41,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.PROD && window.location.hostname.includes('github.io') ? "/bayraagis-echo-chamber" : undefined}>
+      <BrowserRouter>
         <AuthProvider>
           <AppContent />
         </AuthProvider>
