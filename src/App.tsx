@@ -13,13 +13,19 @@ import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
 import NotFound from "./pages/NotFound";
+import PathRedirect from "./components/PathRedirect";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    {/* Handle GitHub Pages ?/path redirects */}
+    <Route path="/" element={<Home />}>
+      <Route path=":path" element={<PathRedirect />} />
+    </Route>
+    
+    {/* Your existing routes */}
     <Route path="/artists" element={<ArtistDirectory />} />
     <Route path="/performances" element={<Performances />} />
     <Route path="/events" element={<Events />} />
