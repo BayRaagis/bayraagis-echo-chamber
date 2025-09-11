@@ -4,14 +4,21 @@
 export const upcomingEvents = [
   // {
   //   id: 1,
-  //   title: "BayRaagis Turns 1!",
-  //   date: "August 09, 2025",
-  //   link: "https://www.instagram.com/p/DMzPwi5ubpm/",
-  //   rsvp: "https://partiful.com/e/hMSj2oO20P17loksXPcG"
+  //   title: "BayRaaginis",
+  //   date: "September 13, 2025",
+  //   link: "https://www.instagram.com/p/DN9E93ykUMY/",
+  //   rsvp: "https://partiful.com/e/68UEOBWIlw5UDJhtVpyC"
   // }
 ] as const;
 
 export const pastEvents = [
+    {
+    id: 13,
+    title: "BayRaaginis",
+    date: "September 13, 2025",
+    link: "https://www.instagram.com/p/DN9E93ykUMY/",
+    rsvp: "https://partiful.com/e/68UEOBWIlw5UDJhtVpyC"
+  },
   {
     id: 12,
     title: "BayRaagis Turns 1!",
