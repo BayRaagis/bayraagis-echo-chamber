@@ -2,13 +2,13 @@
 // TODO: add time, location
 
 export const upcomingEvents = [
-  // {
-  //   id: 1,
-  //   title: "BayRaaginis",
-  //   date: "September 13, 2025",
-  //   link: "https://www.instagram.com/p/DN9E93ykUMY/",
-  //   rsvp: "https://partiful.com/e/68UEOBWIlw5UDJhtVpyC"
-  // }
+  {
+    id: 1,
+    title: "BayRaagis Vijayadashami Open Mic",
+    date: "October 04, 2025",
+    link: "https://www.instagram.com/p/DO4Y9Zwkh0d/",
+    rsvp: "https://chat.whatsapp.com/DgI3ao8p8G56JfPCaP4D88"
+  }
 ] as const;
 
 export const pastEvents = [
