@@ -4,15 +4,52 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "BayRaagis Vijayadashami Open Mic",
-    date: "October 04, 2025",
-    link: "https://www.instagram.com/p/DO4Y9Zwkh0d/",
-    rsvp: "https://chat.whatsapp.com/DgI3ao8p8G56JfPCaP4D88"
+    title: "Carnatic & Hindustani @ WyldFlower Arts",
+    date: "January 15, 2026",
+    link: "https://www.instagram.com/p/DTXPPkJloZP/",
   }
 ] as const;
 
 export const pastEvents = [
-    {
+  // {
+  //   id: 19,
+  //   title: "",
+  //   date: "February 01, 2026",
+  //   link: "https://www.instagram.com/p//",
+  // },
+  {
+    id: 18,
+    title: "Sindhoor Natya Center Holiday Party",
+    date: "December 14, 2025",
+    link: "https://www.instagram.com/p/DR5VuP0kuUI/",
+    rsvp: "https://partiful.com/e/fi5VDIpOJ8zFFOyEk8Qi"
+  },
+  {
+    id: 17,
+    title: "Khayal Enesemble + Kathak",
+    date: "December 13, 2025",
+    link: "https://www.instagram.com/p/DSBcYEpDHhK/",
+  },
+  {
+    id: 16,
+    title: "Live Music @ Bay Area Chowpatti",
+    date: "November 22, 2025",
+    link: "https://www.instagram.com/p/DQ8OH6iCArA/",
+  },
+  {
+    id: 15,
+    title: "BayRaagis at WyldFlowr Arts",
+    date: "October 09, 2025",
+    link: "https://www.instagram.com/p/DPWTfYKEU3Q/",
+  },
+  {
+    id: 14,
+    title: "BayRaagis Vijayadashami Open Mic",
+    date: "October 04, 2025",
+    link: "https://www.instagram.com/p/DO4Y9Zwkh0d/",
+    rsvp: "https://chat.whatsapp.com/DgI3ao8p8G56JfPCaP4D88"
+  },
+  {
     id: 13,
     title: "BayRaaginis",
     date: "September 13, 2025",
