@@ -4,19 +4,37 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Carnatic & Hindustani @ WyldFlower Arts",
-    date: "January 15, 2026",
-    link: "https://www.instagram.com/p/DTXPPkJloZP/",
-  }
+    title: "Holi + Women's day fundraiser for the Goshala",
+    date: "March 7, 2026",
+    link: "https://www.instagram.com/p/DVfPaSAEYRK/",
+  },
 ] as const;
 
 export const pastEvents = [
   // {
-  //   id: 19,
-  //   title: "",
-  //   date: "February 01, 2026",
-  //   link: "https://www.instagram.com/p//",
+  //   id: 22,
+  //   title: "Holi + Women's day fundraiser for the Goshala",
+  //   date: "March 7, 2026",
+  //   link: "https://www.instagram.com/p/DVfPaSAEYRK/",
   // },
+  {
+    id: 21,
+    title: "Mahashivratri @ Radha Krishna Temple",
+    date: "February 28, 2026",
+    link: "https://www.instagram.com/p/DVQCUxPDmU2/",
+  },
+  {
+    id: 20,
+    title: "Shringaar Ras themed Open Mic + Slide Guitar",
+    date: "February 21, 2026",
+    link: "https://www.instagram.com/p/DU44eBvEdPi/",
+  },
+  {
+    id: 19,
+    title: "Carnatic & Hindustani @ WyldFlower Arts",
+    date: "January 15, 2026",
+    link: "https://www.instagram.com/p/DTXPPkJloZP/",
+  },
   {
     id: 18,
     title: "Sindhoor Natya Center Holiday Party",
