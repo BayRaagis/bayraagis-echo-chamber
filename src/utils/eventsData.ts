@@ -4,19 +4,31 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Holi + Women's day fundraiser for the Goshala",
-    date: "March 7, 2026",
-    link: "https://www.instagram.com/p/DVfPaSAEYRK/",
+    title: "Bhajan Clubbing @ ICC Milpitas",
+    date: "March 22, 2026",
+    link: "https://www.instagram.com/p/DV1kLTXEuux",
+  },
+  {
+    id: 2,
+    title: "Bollywood Night @ Chandni Chowk foodtrucks Fremont",
+    date: "March 28, 2026",
+    link: "https://www.instagram.com/p/DV6sxOeAcKQ",
   },
 ] as const;
 
 export const pastEvents = [
-  // {
-  //   id: 22,
-  //   title: "Holi + Women's day fundraiser for the Goshala",
-  //   date: "March 7, 2026",
-  //   link: "https://www.instagram.com/p/DVfPaSAEYRK/",
-  // },
+  {
+    id: 23,
+    title: "Intermission Act @ Pt. Ajoy Chakrabarty's concert",
+    date: "March 20, 2026",
+    link: "https://www.instagram.com/p/DVsHV6EjGww/",
+  },  
+  {
+    id: 22,
+    title: "Holi + Women's day fundraiser for the Goshala",
+    date: "March 7, 2026",
+    link: "https://www.instagram.com/p/DVfPaSAEYRK/",
+  },
   {
     id: 21,
     title: "Mahashivratri @ Radha Krishna Temple",
