@@ -12,27 +12,6 @@ const Home = () => {
           <div className="my-12">
             <BandStats />
           </div>
-          <div className="mt-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Follow us</h2>
-            <div className="flex justify-center space-x-4">
-              <a 
-                href="https://www.instagram.com/bayraagis/" 
-                target="_blank"
-                rel="noopener noreferrer" 
-                className="text-primary hover:text-primary/80 underline"
-              >
-                Instagram
-              </a>
-              <a 
-                href="https://www.youtube.com/@Bayraagis" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 underline"
-              >
-                YouTube
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>

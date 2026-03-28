@@ -2,9 +2,9 @@
 const BandStats = () => {
   // These would come from the database in a real application
   const stats = {
-    totalShows: "30+",
-    uniquePerformers: "99+",
-    hoursPerformed: "50+"
+    totalShows: "50+",
+    uniquePerformers: "150+",
+    hoursPerformed: "100+"
   };
 
   return (
@@ -13,12 +13,12 @@ const BandStats = () => {
         <span className="text-4xl font-bold text-primary">{stats.totalShows}</span>
         <span className="text-muted-foreground mt-2">Shows Performed</span>
       </div>
-      
+
       <div className="flex flex-col items-center p-4 bg-background rounded-md shadow-sm">
         <span className="text-4xl font-bold text-primary">{stats.uniquePerformers}</span>
         <span className="text-muted-foreground mt-2">Unique Performers</span>
       </div>
-      
+
       <div className="flex flex-col items-center p-4 bg-background rounded-md shadow-sm">
         <span className="text-4xl font-bold text-primary">{stats.hoursPerformed}</span>
         <span className="text-muted-foreground mt-2">Hours of Music</span>
