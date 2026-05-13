@@ -3,6 +3,20 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script type="text/javascript">
+    // spa-github-pages: restore URL from ?/path redirect made by 404.html
+    // https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&');
+        });
+        window.history.replaceState(null, null,
+          decoded[0] + (decoded.slice(1).join('&') ? '?' + decoded.slice(1).join('&') : '') + l.hash
+        );
+      }
+    }(window.location));
+  </script>
   <link rel="icon" href="/assets/custom-favicons/favicon-32x32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BayRaagis</title>

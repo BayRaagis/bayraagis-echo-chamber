@@ -4,21 +4,48 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "BayRaagis x Bhajan Clubbing 2.0",
-    date: "May 2, 2026",
-    link: "https://www.instagram.com/p/DXivAyJDkmV/",
-    rsvp: "https://www.eventbrite.com/e/bhajan-clubbing-20-bay-area-live-at-india-community-center-tickets-1986297987751"
+    title: "Bollywood @ Chandni Chowk Food Trucks",
+    date: "May 23, 2026",
   },
   {
     id: 2,
+    title: "(tentative) Bollywood @ EggMania Food Trucks",
+    date: "June 13, 2026",
+  },
+  {
+    id: 3,
+    title: "(tentative) BayRaagis Tribute to Asha Bhosle",
+    date: "June 27, 2026",
+  },
+] as const;
+
+export const pastEvents = [
+  {
+    id: 30,
+    title: "Bhajan Clubbing @ Orange County",
+    date: "May 17, 2026",
+    link: "https://www.instagram.com/p/DYIeC02ktme/",
+  },
+  {
+    id: 29,
+    title: "Bhajan Jamming",
+    date: "May 9, 2026",
+    link: "https://www.instagram.com/p/DX99l5TPPAc/",
+  },
+  {
+    id: 28,
     title: "Classical Fusion @ HUA Samvaada",
     date: "May 3, 2026",
     link: "https://www.instagram.com/p/DXiNp2gDpjz/",
     rsvp: "hua.edu/samvada/bay-area-2"
   },
-] as const;
-
-export const pastEvents = [
+  {
+    id: 27,
+    title: "BayRaagis x Bhajan Clubbing 2.0",
+    date: "May 2, 2026",
+    link: "https://www.instagram.com/p/DXivAyJDkmV/",
+    rsvp: "https://www.eventbrite.com/e/bhajan-clubbing-20-bay-area-live-at-india-community-center-tickets-1986297987751"
+  },
   {
     id: 26,
     title: "Maya - A Life Untamed",
