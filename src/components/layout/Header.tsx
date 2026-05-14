@@ -31,6 +31,9 @@ const Header = () => {
             <Link to="/events" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
               Events
             </Link>
+            <Link to="/donate" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
+              Donate
+            </Link>
             <Link to="/testimonials" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
               Testimonials
             </Link>

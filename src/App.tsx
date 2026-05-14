@@ -10,6 +10,7 @@ import ArtistDirectory from "./pages/ArtistDirectory";
 import Events from "./pages/Events";
 import Performances from "./pages/Performances";
 import Testimonials from "./pages/Testimonials";
+import Donate from "./pages/Donate";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -26,6 +27,7 @@ const AppContent = () => (
     <Route path="/artists" element={<ArtistDirectory />} />
     <Route path="/performances" element={<Performances />} />
     <Route path="/events" element={<Events />} />
+    <Route path="/donate" element={<Donate />} />
     <Route path="/testimonials" element={<Testimonials />} />
     <Route path="/contact" element={<Contact />} />
     
