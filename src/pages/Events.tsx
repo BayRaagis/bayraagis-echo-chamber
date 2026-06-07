@@ -49,7 +49,6 @@ const Events = () => {
             {upcomingEvents.length === 0 && (
               <p className="text-center col-span-1 md:col-span-3">Stay tuned!</p>
             )}
-            <div className="h-24"></div>
             {upcomingEvents.map(event => (
               <div key={event.id} className="border rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-semibold mb-2">{event.title}</h3>

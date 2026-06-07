@@ -4,22 +4,36 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Bollywood @ Chandni Chowk Food Trucks",
-    date: "May 23, 2026",
+    title: "Make Music Day San Jose",
+    date: "June 21, 2026",
+    link: "https://www.instagram.com/p/DZEjTgAO5rA/",
   },
+  // {
+  //   id: 2,
+  //   title: "(tentative) Bollywood @ EggMania Food Trucks",
+  //   date: "June 13, 2026",
+  // },
   {
     id: 2,
-    title: "(tentative) Bollywood @ EggMania Food Trucks",
-    date: "June 13, 2026",
+    title: "BayRaagis Tribute to Asha Bhosle",
+    date: "June 27, 2026",
+    link: "https://www.instagram.com/p/DZRlC7kuqTD/",
+    rsvp: "https://glistening-kelpie-11d02f.netlify.app/"
   },
   {
     id: 3,
-    title: "(tentative) BayRaagis Tribute to Asha Bhosle",
-    date: "June 27, 2026",
+    title: "Bhajan Clubbing @ ICC Milpitas",
+    date: "June 28, 2026",
+    link: "https://www.instagram.com/p/DZJP4UCgPRE/"
   },
 ] as const;
 
 export const pastEvents = [
+  {
+    id: 31,
+    title: "Bollywood @ Chandni Chowk Food Trucks",
+    date: "May 23, 2026",
+  },
   {
     id: 30,
     title: "Bhajan Clubbing @ Orange County",
