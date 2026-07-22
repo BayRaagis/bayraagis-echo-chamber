@@ -4,35 +4,67 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Make Music Day San Jose",
-    date: "June 21, 2026",
-    link: "https://www.instagram.com/p/DZEjTgAO5rA/",
+    title: "Ashadhi Ekadashi Special Abhanga Concert",
+    date: "July 24, 2026",
+    link: "https://www.instagram.com/p/DbFQl0vOMUj/"
   },
-  // {
-  //   id: 2,
-  //   title: "(tentative) Bollywood @ EggMania Food Trucks",
-  //   date: "June 13, 2026",
-  // },
   {
     id: 2,
-    title: "BayRaagis Tribute to Asha Bhosle",
-    date: "June 27, 2026",
-    link: "https://www.instagram.com/p/DZRlC7kuqTD/",
-    rsvp: "https://glistening-kelpie-11d02f.netlify.app/"
+    title: "Kannada Bhavageete",
+    date: "August 2, 2026",
+    link: "https://www.instagram.com/p/Daats2muFGI/"
   },
+  {
+    id: 2,
+    title: "Valkyries South Asian Heritage Night",
+    date: "August 4, 2026",
+    link: "https://www.instagram.com/p/DZY0df9Fkw9/"
+  },
+  {
+    id: 2,
+    title: "Mudita -- A Cross-Cultural Raag Challenge",
+    date: "August 15, 2026",
+    link: "https://www.instagram.com/p/Dat-YS-OhLk/"
+  },
+  {
+    id: 2,
+    title: "Ras Raaga -- Bhajan Clubbing",
+    date: "August 30, 2026",
+    link: "https://www.instagram.com/p/DawiAmLFIL2/"
+  },
+] as const;
+
+export const pastEvents = [
   {
     id: 3,
     title: "Bhajan Clubbing @ ICC Milpitas",
     date: "June 28, 2026",
     link: "https://www.instagram.com/p/DZJP4UCgPRE/"
   },
-] as const;
-
-export const pastEvents = [
+  {
+    id: 34,
+    title: "BayRaagis Tribute to Asha Bhosle",
+    date: "June 27, 2026",
+    link: "https://www.instagram.com/p/DZRlC7kuqTD/",
+    rsvp: "https://glistening-kelpie-11d02f.netlify.app/"
+  },
+  {
+    id: 33,
+    title: "Make Music Day San Jose",
+    date: "June 21, 2026",
+    link: "https://www.instagram.com/p/DZEjTgAO5rA/",
+  },
+  {
+    id: 32,
+    title: "BayRaagis @ Michael's Second Act Bar",
+    date: "May 23, 2026",
+    link: "https://www.instagram.com/p/DYn-YhxOoNg/",
+  },
   {
     id: 31,
     title: "Bollywood @ Chandni Chowk Food Trucks",
     date: "May 23, 2026",
+    link: "https://www.instagram.com/p/DYXKdK0OZlc/",
   },
   {
     id: 30,
