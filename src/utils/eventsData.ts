@@ -4,30 +4,39 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Ashadhi Ekadashi Special Abhanga Concert",
-    date: "July 24, 2026",
-    link: "https://www.instagram.com/p/DbFQl0vOMUj/"
-  },
-  {
-    id: 2,
-    title: "Kannada Bhavageete",
-    date: "August 2, 2026",
-    link: "https://www.instagram.com/p/Daats2muFGI/"
-  },
-  {
-    id: 2,
     title: "Valkyries South Asian Heritage Night",
     date: "August 4, 2026",
     link: "https://www.instagram.com/p/DZY0df9Fkw9/"
   },
   {
     id: 2,
+    title: "Bollywood @ Chandni Chowk Food Trucks",
+    date: "August 08, 2026",
+    link: "https://www.instagram.com/p/Dbmfv26OaOe/"
+  },
+  {
+    id: 3,
     title: "Mudita -- A Cross-Cultural Raag Challenge",
     date: "August 15, 2026",
     link: "https://www.instagram.com/p/Dat-YS-OhLk/"
   },
   {
-    id: 2,
+    id: 4,
+    title: "Bhajans @ Balaji Temple San Jose",
+    date: "August 16, 2026",
+  },
+  {
+    id: 5,
+    title: "Classical Concert @ RootStock Arts (Swati & Madhurranjan)",
+    date: "August 18, 2026",
+  },
+  {
+    id: 6,
+    title: "Classical Concert @ RootStock Arts (Ameya V.)",
+    date: "August 25, 2026",
+  },
+  {
+    id: 7,
     title: "Ras Raaga -- Bhajan Clubbing",
     date: "August 30, 2026",
     link: "https://www.instagram.com/p/DawiAmLFIL2/"
@@ -36,7 +45,25 @@ export const upcomingEvents = [
 
 export const pastEvents = [
   {
-    id: 3,
+    id: 37,
+    title: "Color Your Mind Festival",
+    date: "August 2, 2026",
+    link: "https://www.instagram.com/p/DbiyFPeuLdT/"
+  },
+  {
+    id: 37,
+    title: "Kannada Bhavageete",
+    date: "August 2, 2026",
+    link: "https://www.instagram.com/p/DbcebmjOJg_/"
+  },
+  {
+    id: 36,
+    title: "Ashadhi Ekadashi Special Abhanga Concert",
+    date: "July 24, 2026",
+    link: "https://www.instagram.com/p/DbMM9wZOLvk/"
+  },
+  {
+    id: 35,
     title: "Bhajan Clubbing @ ICC Milpitas",
     date: "June 28, 2026",
     link: "https://www.instagram.com/p/DZJP4UCgPRE/"
