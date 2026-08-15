@@ -4,39 +4,33 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Valkyries South Asian Heritage Night",
-    date: "August 4, 2026",
-    link: "https://www.instagram.com/p/DZY0df9Fkw9/"
-  },
-  {
-    id: 2,
-    title: "Bollywood @ Chandni Chowk Food Trucks",
-    date: "August 08, 2026",
-    link: "https://www.instagram.com/p/Dbmfv26OaOe/"
-  },
-  {
-    id: 3,
     title: "Mudita -- A Cross-Cultural Raag Challenge",
     date: "August 15, 2026",
     link: "https://www.instagram.com/p/Dat-YS-OhLk/"
   },
   {
-    id: 4,
+    id: 2,
     title: "Bhajans @ Balaji Temple San Jose",
     date: "August 16, 2026",
   },
   {
-    id: 5,
-    title: "Classical Concert @ RootStock Arts (Swati & Madhurranjan)",
+    id: 3,
+    title: "Classical Concert @ RootStock Arts (Swati & Satyam)",
     date: "August 18, 2026",
+    link: "https://www.instagram.com/p/DcAZI-BOlz2/"
   },
   {
-    id: 6,
+    id: 4,
+    title: "BayRaagis 2nd Anniversary Celebration",
+    date: "August 22, 2026",
+  },
+  {
+    id: 5,
     title: "Classical Concert @ RootStock Arts (Ameya V.)",
     date: "August 25, 2026",
   },
   {
-    id: 7,
+    id: 6,
     title: "Ras Raaga -- Bhajan Clubbing",
     date: "August 30, 2026",
     link: "https://www.instagram.com/p/DawiAmLFIL2/"
@@ -45,7 +39,19 @@ export const upcomingEvents = [
 
 export const pastEvents = [
   {
-    id: 37,
+    id: 40,
+    title: "Valkyries South Asian Heritage Night",
+    date: "August 4, 2026",
+    link: "https://www.instagram.com/p/DZY0df9Fkw9/"
+  },
+  {
+    id: 39,
+    title: "Bollywood @ Chandni Chowk Food Trucks",
+    date: "August 8, 2026",
+    link: "https://www.instagram.com/p/Dbmfv26OaOe/"
+  },
+  {
+    id: 38,
     title: "Color Your Mind Festival",
     date: "August 2, 2026",
     link: "https://www.instagram.com/p/DbiyFPeuLdT/"
