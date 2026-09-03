@@ -25,7 +25,7 @@ const BandIntro = ({ showFollowSection = true }: BandIntroProps) => {
           (vocalists and instrumentalists), each adding their own flair to our shows. Our mission is 
           to connect with our audience, and show them music that they may or may not already know 
           from a different perspective. Interested to learn more? Check out our Artists Directory, 
-          past performances, upcoming events and more. To get latest updates about us, follow us in Instagram.
+          past and upcoming Events, and more. To get latest updates about us, follow us in Instagram.
         </p>
       </div>
       

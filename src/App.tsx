@@ -8,14 +8,12 @@ import { useEffect } from "react";
 import Home from "./pages/Home";
 import ArtistDirectory from "./pages/ArtistDirectory";
 import Events from "./pages/Events";
-import Performances from "./pages/Performances";
 import Testimonials from "./pages/Testimonials";
 import Donate from "./pages/Donate";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
 import NotFound from "./pages/NotFound";
-// import PathRedirect from "./components/PathRedirect";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
@@ -25,7 +23,6 @@ const AppContent = () => (
     <Route path="/" element={<Home />} />
 
     <Route path="/artists" element={<ArtistDirectory />} />
-    <Route path="/performances" element={<Performances />} />
     <Route path="/events" element={<Events />} />
     <Route path="/donate" element={<Donate />} />
     <Route path="/testimonials" element={<Testimonials />} />
