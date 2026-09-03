@@ -46,6 +46,23 @@ const Testimonials = () => {
       show: "Multiple shows",
       name: "NN",
       image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
+    },
+    {
+      id: 4,
+      // quote: "We recently hosted a Carnatic concert at our home in celebration of a Puja, and the experience was truly magical. \
+      // A huge thank you to Bayraagis for their invaluable help in connecting us with the perfect artists for such an auspicious occasion. \
+      // The performance itself was extraordinary. Krishna ji's vocals were deeply moving, and his rendition of the divine songs brought \
+      // a beautiful, spiritual energy to our home that perfectly captured the spirit of the puja. He was brilliantly accompanied by Ajay ji \
+      // on the mridangam and Sasi ji on the violin. The immense talent, devotion, and seamless synergy of this trio created an unforgettable \
+      // atmosphere that left everyone spellbound. I cannot recommend these incredibly gifted musicians and the Bayraagis team for facilitating \
+      // highly enough. They brought so much joy and grace to our home!",
+      quote: "A huge thank you to Bayraagis for their invaluable help in connecting us with the perfect artists for a Carnatic concert on \
+      an auspicious occasion. The immense talent, devotion, and seamless synergy of Krishna ji, Sasi ji, and Ajay ji created an unforgettable \
+      atmosphere that left everyone spellbound. I cannot recommend these incredibly gifted musicians and the Bayraagis team for facilitating \
+      highly enough. They brought so much joy and grace to our home!",
+      show: "Private home concert",
+      name: "Anon",
+      image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     }
   ];
 

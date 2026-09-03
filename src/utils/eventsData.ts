@@ -4,40 +4,60 @@
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Mudita -- A Cross-Cultural Raag Challenge",
-    date: "August 15, 2026",
-    link: "https://www.instagram.com/p/Dat-YS-OhLk/"
+    title: "Live Bollywood Unplugged @ Eggmania",
+    date: "September 04, 2026",
+    link: "https://www.instagram.com/p/DckWR5yOXby/"
   },
   {
     id: 2,
-    title: "Bhajans @ Balaji Temple San Jose",
-    date: "August 16, 2026",
+    title: "Bhajans & Beats",
+    date: "September 06, 2026",
+    link: "https://www.instagram.com/p/DcjpiTSS6OL/"
   },
   {
     id: 3,
-    title: "Classical Concert @ RootStock Arts (Swati & Satyam)",
-    date: "August 18, 2026",
-    link: "https://www.instagram.com/p/DcAZI-BOlz2/"
-  },
-  {
-    id: 4,
-    title: "BayRaagis 2nd Anniversary Celebration",
-    date: "August 22, 2026",
-  },
-  {
-    id: 5,
-    title: "Classical Concert @ RootStock Arts (Ameya V.)",
-    date: "August 25, 2026",
-  },
-  {
-    id: 6,
-    title: "Ras Raaga -- Bhajan Clubbing",
-    date: "August 30, 2026",
-    link: "https://www.instagram.com/p/DawiAmLFIL2/"
+    title: "Indian Rock Covers (with ICC Connect)",
+    date: "September 19, 2026",
+    link: "https://www.instagram.com/p/DcoBqP3OCC4/"
   },
 ] as const;
 
 export const pastEvents = [
+  {
+    id: 46,
+    title: "Ras Raaga -- Bhajan Clubbing",
+    date: "August 30, 2026",
+    link: "https://www.instagram.com/p/DawiAmLFIL2/"
+  },
+  {
+    id: 45,
+    title: "Classical Concert @ RootStock Arts (Ameya V.)",
+    date: "August 25, 2026",
+    link: "https://www.instagram.com/p/DcaKglYNk3x/"
+  },
+  {
+    id: 44,
+    title: "BayRaagis 2nd Anniversary Celebration",
+    date: "August 22, 2026",
+    link: "https://www.instagram.com/p/DcB-1OtiXk8"
+  },
+  {
+    id: 43,
+    title: "Classical Concert @ RootStock Arts (Swati & Satyam)",
+    date: "August 18, 2026",
+    link: "https://www.instagram.com/p/DcAZI-BOlz2/"
+  },
+  // {
+  //   id: 42,
+  //   title: "Bhajans @ Balaji Temple San Jose",
+  //   date: "August 16, 2026",
+  // },
+  {
+    id: 41,
+    title: "Mudita -- A Cross-Cultural Raag Challenge",
+    date: "August 15, 2026",
+    link: "https://www.instagram.com/p/Dat-YS-OhLk/"
+  },
   {
     id: 40,
     title: "Valkyries South Asian Heritage Night",
