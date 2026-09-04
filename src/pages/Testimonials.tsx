@@ -57,11 +57,11 @@ const Testimonials = () => {
       // atmosphere that left everyone spellbound. I cannot recommend these incredibly gifted musicians and the Bayraagis team for facilitating \
       // highly enough. They brought so much joy and grace to our home!",
       quote: "A huge thank you to Bayraagis for their invaluable help in connecting us with the perfect artists for a Carnatic concert on \
-      an auspicious occasion. The immense talent, devotion, and seamless synergy of Krishna ji, Sasi ji, and Ajay ji created an unforgettable \
+      an auspicious occasion. The immense talent, devotion, and seamless synergy of Krishna Parthasarathy ji, Sasi Madgula ji, and Ajay Gopi ji created an unforgettable \
       atmosphere that left everyone spellbound. I cannot recommend these incredibly gifted musicians and the Bayraagis team for facilitating \
       highly enough. They brought so much joy and grace to our home!",
       show: "Private home concert",
-      name: "Anon",
+      name: "Ms Praveena Cherukuri",
       image: `${import.meta.env.BASE_URL}assets/dummy-audience.png`
     }
   ];
