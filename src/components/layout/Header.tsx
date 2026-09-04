@@ -25,9 +25,6 @@ const Header = () => {
             <Link to="/artists" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
               Artist Directory
             </Link>
-            {/* <Link to="/performances" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
-              Past Performances
-            </Link> */}
             <Link to="/events" className="px-3 py-2 rounded-md text-white hover:bg-white/20 transition-colors">
               Events
             </Link>

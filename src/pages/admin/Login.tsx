@@ -3,13 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
-import { toast } from "@/components/ui/use-toast";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -17,7 +15,6 @@ const loginSchema = z.object({
 });
 
 const AdminLogin = () => {
-  const navigate = useNavigate();
   const { signIn } = useAuth();
 
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -32,12 +29,8 @@ const AdminLogin = () => {
     try {
       await signIn(values.email, values.password);
     } catch (error) {
+      // signIn surfaces its own toast; nothing more to do here.
       console.error("Authentication error:", error);
-      toast({
-        title: "Authentication Error",
-        description: "Invalid email or password.",
-        variant: "destructive"
-      });
     }
   };
 

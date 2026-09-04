@@ -24,8 +24,7 @@ const Footer = () => {
             <nav className="flex flex-col space-y-2">
               <Link to="/" className="hover:underline">Home</Link>
               <Link to="/artists" className="hover:underline">Artist Directory</Link>
-              <Link to="/performances" className="hover:underline">Past Performances</Link>
-              <Link to="/events" className="hover:underline">Upcoming Events</Link>
+              <Link to="/events" className="hover:underline">Events</Link>
               <Link to="/testimonials" className="hover:underline">Testimonials</Link>
               <Link to="/contact" className="hover:underline">Contact Us</Link>
             </nav>
